@@ -1,3 +1,3 @@
 import {user} from './user.js';
-
-export const schemaTypes = [user]
+import {post} from './post.js'
+export const schemaTypes = [user,post]
