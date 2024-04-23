@@ -15,6 +15,7 @@ import NewIcon from './ui/icons/NewIcon';
 import NewFillIcon from './ui/icons/NewFillIcon';
 import { usePathname } from 'next/navigation';
 import ColorButton from './ui/ColorButton';
+import {useSession, signIn, signOut} from 'next-auth/react';
 
 const menu = [
     {
@@ -35,6 +36,7 @@ const menu = [
 ]
 
 export default function AppHeader() {
+    const { data: session } = useSession();
     const pathName = usePathname();
   return (
     <div className='flex justify-between items-center  '>
@@ -46,7 +48,10 @@ export default function AppHeader() {
                     {item.href===pathName ? item.clickedIcon : item.icon}
                 </Link>
             </li>)}
-            <ColorButton text="Sign in" onClick={()=>{}}/>
+            {
+                session ? <ColorButton text="Sign Out" onClick={()=>signOut()}/>
+                : <ColorButton text="Sign In" onClick={()=>signIn()}/>
+            }
         </ul>
       </nav>
    
