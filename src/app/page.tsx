@@ -10,7 +10,7 @@ export default async function HomePage() {
   const user = session?.user;
 
   if(!user){
-    redirect('/auth/siginin');
+    redirect('/auth/signin');
   }
   return (
    <section className='w-full flex flex-col md:flex-row max-w-[850px] p-4'>
