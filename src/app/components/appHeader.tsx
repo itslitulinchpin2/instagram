@@ -16,6 +16,7 @@ import NewFillIcon from './ui/icons/NewFillIcon';
 import { usePathname } from 'next/navigation';
 import ColorButton from './ui/ColorButton';
 import {useSession, signIn, signOut} from 'next-auth/react';
+import Avatar from './ui/Avatar';
 
 const menu = [
     {
@@ -38,6 +39,8 @@ const menu = [
 export default function AppHeader() {
     const { data: session } = useSession();
     const pathName = usePathname();
+    const user = session?.user;
+
   return (
     <div className='flex justify-between items-center  '>
       <Link href='/'><h1 className='text-3xl font-bold '>Instagram!</h1></Link>
@@ -48,10 +51,20 @@ export default function AppHeader() {
                     {item.href===pathName ? item.clickedIcon : item.icon}
                 </Link>
             </li>)}
+            {user && 
+            <li>
+                <Link href={`/user/${user.username}`}>
+                <Avatar image={user.image}/>
+                </Link>
+               
+
+            </li> }
+            <li>
             {
                 session ? <ColorButton text="Sign Out" onClick={()=>signOut()} size='small'></ColorButton>
                 : <ColorButton text="Sign In" onClick={()=>signIn()} size='small' />
             }
+            </li>
         </ul>
       </nav>
    
