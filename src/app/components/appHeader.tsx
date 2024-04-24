@@ -49,8 +49,8 @@ export default function AppHeader() {
                 </Link>
             </li>)}
             {
-                session ? <ColorButton text="Sign Out" onClick={()=>signOut()}/>
-                : <ColorButton text="Sign In" onClick={()=>signIn()}/>
+                session ? <ColorButton text="Sign Out" onClick={()=>signOut()} size='small'></ColorButton>
+                : <ColorButton text="Sign In" onClick={()=>signIn()} size='small' />
             }
         </ul>
       </nav>
