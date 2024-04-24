@@ -9,7 +9,7 @@ import Scroll from './Scroll';
 
 export default function Followingbar() {
     const {data, isLoading:loading, error} = useSWR<DetailUser>('/api/me');
-    console.log(data);
+    //console.log(data);
     const users = data?.following;
 
   return (
