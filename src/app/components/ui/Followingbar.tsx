@@ -22,7 +22,7 @@ export default function Followingbar() {
             
                 <Scroll>
                     {users.map(({image,username})=> <Link key={username} className='flex flex-col items-center w-20 ' href={`/user/${username}`}>
-                    <Avatar size='normal' image={image} highlight />
+                    <Avatar size='large' image={image} highlight />
                     <p className='w-full text-center text-sm text-ellipsis overflow-hidden'>{username}</p>
                     </Link>)}
                 </Scroll>
