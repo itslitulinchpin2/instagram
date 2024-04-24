@@ -54,7 +54,7 @@ export default function AppHeader() {
             {user && 
             <li>
                 <Link href={`/user/${user.username}`}>
-                <Avatar image={user.image}/>
+                <Avatar size='small' highlight image={user.image}/>
                 </Link>
                
 
