@@ -3,7 +3,7 @@ import React from 'react'
 import useSWR from 'swr';
 
 export default function Followingbar() {
-    const {data, isLoading, error} = useSWR('/api/hello');
+    const {data, isLoading, error} = useSWR('/api/me');
     console.log(data);
   return (
     <div>
