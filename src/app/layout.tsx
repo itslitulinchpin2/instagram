@@ -4,6 +4,7 @@ import "./globals.css";
 
 import AppHeader from './components/appHeader';
 import AuthContext from '@/context/AuthContext';
+import SWRConfigContext from '@/context/SWRConfigContext';
 
 
 
@@ -27,7 +28,10 @@ export default function RootLayout({
         <header className='sticky top-0 bg-white z-10 border-b'>
           <AppHeader/>
         </header>
-        <main>{children}</main>
+        <main>
+          <SWRConfigContext>
+          {children}
+          </SWRConfigContext></main>
         </AuthContext>
         </body>
     </html>
