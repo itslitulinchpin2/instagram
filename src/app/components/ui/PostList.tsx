@@ -2,7 +2,6 @@
 import useSWR from 'swr';
 import React from 'react'
 import { SimplePost } from '@/model/model';
-import { GridLoader } from 'react-spinners';
 import PostListCard from './PostListCard';
 import GridSpinner from './icons/GridSpinner';
 

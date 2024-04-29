@@ -1,12 +1,6 @@
 'use client';
 import React from 'react'
 import Link from 'next/link'
-import { AiFillHome } from 'react-icons/ai';
-import { BsPlusSquare } from 'react-icons/bs';
-import { BsPlusSquareFill } from 'react-icons/bs';
-import { RiSearchLine } from 'react-icons/ri';
-import { RiSearchFill } from 'react-icons/ri';
-import styles from './appHeaer.module.css'
 import HomeIcon from './ui/icons/HomeIcon';
 import HomeFillIcon from './ui/icons/HomeFillIcon';
 import SearchIcon from './ui/icons/SearchIcon';
