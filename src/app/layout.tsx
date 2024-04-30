@@ -12,7 +12,10 @@ import SWRConfigContext from '@/context/SWRConfigContext';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Instagram",
+  title: {
+    default:'Instagram',
+    template:'Instagram | %s'
+  },
   description: "Clone coding by Seungmin Lee",
 };
 
