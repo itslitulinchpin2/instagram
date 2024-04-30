@@ -30,7 +30,7 @@ export default function RootLayout({
             <AppHeader/>
           </div>
         </header>
-        <main className='w-full flex justify-center '>
+        <main className='mx-auto max-w-screen-xl w-full flex justify-center '>
           <SWRConfigContext>
           {children}
           </SWRConfigContext></main>
