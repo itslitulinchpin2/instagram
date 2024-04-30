@@ -1,3 +1,4 @@
+import { ProfileUser } from '@/model/user';
 import {client} from './sanity';
 type OAuthUser = {
     id:string;
@@ -42,5 +43,7 @@ export async function searchUsers(keyword?:string){
             "followers":count(followers)
         }
         `
-    )
+    ).then((users)=>users.map((user:ProfileUser)=>(
+        {...user, following: user.following ?? 0, followers: user.followers ?? 0})))
+    
 }
