@@ -1,5 +1,5 @@
 'use client';
-import { DetailUser } from '@/model/user';
+import { HomeUser } from '@/model/user';
 import React from 'react'
 import { PropagateLoader } from 'react-spinners';
 import useSWR from 'swr';
@@ -8,7 +8,7 @@ import Avatar from './Avatar';
 import Scroll from './Scroll';
 
 export default function Followingbar() {
-    const {data, isLoading:loading, error} = useSWR<DetailUser>('/api/me');
+    const {data, isLoading:loading, error} = useSWR<HomeUser>('/api/me');
     //console.log(data);
     const users = data?.following;
 

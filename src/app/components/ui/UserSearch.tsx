@@ -1,5 +1,5 @@
 'use client';
-import { ProfileUser } from '@/model/user';
+import { SearchUser } from '@/model/user';
 import React, { FormEvent } from 'react'
 import { useState } from 'react';
 import useSWR from 'swr';
@@ -16,7 +16,7 @@ export default function UserSearch() {
   const [keyword,setKeyword] = useState('');
   const debouncedKeyword = useDebounce(keyword);
 
-  const {data:users,isLoading,error} = useSWR<ProfileUser[]>(`api/search/${debouncedKeyword}`);
+  const {data:users,isLoading,error} = useSWR<SearchUser[]>(`api/search/${debouncedKeyword}`);
   //console.log(data);
   
   const onSubmit = (e: FormEvent)=>{
