@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import HeartIcon from './icons/HeartIcon';
 import BookmarkIcon from './icons/BookmarkIcon';
 import { parseDate } from '@/util/date';
+import ToggleButton from './ToggleButton';
+import HeartFillIcon from './icons/HeartFillIcon';
+import BookmarkFillIcon from './icons/BookmarkFillIcon';
 
 type Props = {
     likes:string[];
@@ -11,11 +14,14 @@ type Props = {
 }
 
 export default function ActionBar({likes,username,text,createdAt}:Props) {
+  const [liked,setLiked ]=useState(false);
+  const [bookmarked,setBookmarked] = useState(false);
+  
   return (
     <>
         <div className='flex justify-between my-2 px-4 '>
-        <HeartIcon/>
-        <BookmarkIcon/>
+        <ToggleButton toggled={liked} onToggle={setLiked} onIcon={<HeartFillIcon/>} offIcon={<HeartIcon/>}/>
+        <ToggleButton toggled={bookmarked} onToggle={setBookmarked} onIcon={<BookmarkFillIcon/>} offIcon={<BookmarkIcon/>}/>
         </div>
         <div className='px-4'>
             <p className='text-sm font-bold mb-2'>{`${likes ?.length ?? 0} ${likes?.length>1 ? 'likes' : 'like'}`}</p>
