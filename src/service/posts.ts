@@ -47,7 +47,7 @@ export async function getPostsOf(username: string) {
       .fetch(
         `*[_type == "post" && author->username == "${username}"]
         | order(_createdAt desc){
-          ${simplePostProjection}
+           ${simplePostProjection}
         }`
       )
       .then(mapPosts);
@@ -57,7 +57,7 @@ export async function getPostsOf(username: string) {
       .fetch(
         `*[_type == "post" && "${username}" in likes[]->username]
         | order(_createdAt desc){
-          ${simplePostProjection}
+           ${simplePostProjection}
         }`
       )
       .then(mapPosts);
@@ -67,7 +67,7 @@ export async function getPostsOf(username: string) {
       .fetch(
         `*[_type == "post" && _id in *[_type=="user" && username=="${username}"].bookmarks[]._ref]
         | order(_createdAt desc){
-          ${simplePostProjection}
+           ${simplePostProjection}
         }`
       )
       .then(mapPosts);
