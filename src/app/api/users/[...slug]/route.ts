@@ -23,7 +23,6 @@ type Context = {
     }
   
     return request(username).then((data) => {
-        console.log("되긴하냐" , request)
         console.log(data);
         return NextResponse.json(data)}
     );
